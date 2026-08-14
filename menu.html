@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menu — ABRA FOOD</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="menu">
+
+<header id="site-header"></header>
+
+<main>
+  <section class="page-hero" style="padding-bottom:36px;">
+    <div class="container">
+      <span class="eyebrow">Menu</span>
+      <h1>Brand → Location → Category → Dish</h1>
+      <p>Every outlet can have its own prices and availability — choose your outlet for an accurate menu, or browse the full ABRA catalogue.</p>
+    </div>
+  </section>
+
+  <div class="container" style="margin-top:-20px;">
+    <div class="finder reveal" style="margin-top:0;">
+      <h3 style="margin-bottom:4px;">Your Outlet</h3>
+      <p class="sub" id="location-status">No outlet selected — showing the standard ABRA catalogue. Select an outlet to order.</p>
+      <div class="finder-row">
+        <div class="field"><label>Country</label><select id="f-country"><option value="">Select Country</option></select></div>
+        <div class="field"><label>State</label><select id="f-state" disabled><option value="">Select State</option></select></div>
+        <div class="field"><label>City</label><select id="f-city" disabled><option value="">Select City</option></select></div>
+        <div class="field"><label>Outlet</label><select id="f-outlet" disabled><option value="">Select Outlet</option></select></div>
+        <button class="btn btn-primary" id="f-set">Set Outlet</button>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="container">
+      <div class="filter-bar">
+        <button class="chip active" data-brand="all">All Brands</button>
+        <button class="chip veg-chip" data-brand="veg">🥗 ABRA VEG</button>
+        <button class="chip nonveg-chip" data-brand="nonveg">🍗 ABRA NON-VEG</button>
+        <button class="chip cafe-chip" data-brand="cafe">☕ ABRA CAFÉ</button>
+        <button class="chip" id="veg-only-toggle">🟢 Veg Only</button>
+        <div class="search-box">
+          <span class="ic">🔍</span>
+          <input type="text" id="menu-search" placeholder="Search dishes e.g. Biryani, Paneer, Coffee...">
+        </div>
+      </div>
+      <div class="pill-nav" id="category-pills"></div>
+      <div id="menu-results"></div>
+    </div>
+  </section>
+</main>
+
+<footer id="site-footer"></footer>
+
+<script src="js/data.js"></script>
+<script src="js/store.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/location-picker.js"></script>
+<script src="js/menu.js"></script>
+</body>
+</html>

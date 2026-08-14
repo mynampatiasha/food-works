@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reserve a Table — ABRA FOOD</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="reserve">
+
+<header id="site-header"></header>
+
+<main>
+  <section class="page-hero" style="padding-bottom:36px;">
+    <div class="container">
+      <span class="eyebrow">Reserve a Table</span>
+      <h1>Book Your Table in Seconds</h1>
+      <p>Choose an outlet, date and time — we'll confirm by email, SMS &amp; WhatsApp.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container center-col">
+      <div id="reserve-form-wrap">
+        <div class="form-card">
+          <div class="alert alert-success" id="r-success"></div>
+          <h2>Reservation Details</h2>
+          <div class="form-grid" style="margin-top:16px;">
+            <div class="form-group field-full">
+              <label>Country</label>
+              <select id="r-country"><option value="">Select Country</option></select>
+            </div>
+            <div class="form-group"><label>State</label><select id="r-state" disabled><option value="">Select State</option></select></div>
+            <div class="form-group"><label>City</label><select id="r-city" disabled><option value="">Select City</option></select></div>
+            <div class="form-group field-full"><label>Outlet / Brand</label><select id="r-outlet" disabled><option value="">Select Outlet</option></select></div>
+
+            <div class="form-group"><label>Date</label><input type="date" id="r-date"></div>
+            <div class="form-group"><label>Time</label>
+              <select id="r-time">
+                <option>12:00 PM</option><option>12:30 PM</option><option>1:00 PM</option><option>1:30 PM</option>
+                <option>7:00 PM</option><option>7:30 PM</option><option>8:00 PM</option><option>8:30 PM</option><option>9:00 PM</option>
+              </select>
+            </div>
+            <div class="form-group"><label>Number of Guests</label><input type="number" id="r-guests" min="1" max="30" value="2"></div>
+            <div class="form-group"><label>Your Name</label><input type="text" id="r-name" placeholder="Full name"></div>
+            <div class="form-group"><label>Phone</label><input type="tel" id="r-phone" placeholder="+91 98765 43210"></div>
+            <div class="form-group"><label>Email</label><input type="email" id="r-email" placeholder="you@example.com"></div>
+            <div class="form-group field-full"><label>Special Request</label><textarea id="r-request" placeholder="Window seat, birthday setup, high chair, etc. (optional)"></textarea></div>
+          </div>
+          <button class="btn btn-primary btn-block" id="r-submit" style="margin-top:10px;">Confirm Reservation</button>
+        </div>
+      </div>
+
+      <div class="form-card text-center" id="reserve-confirmed" style="display:none;">
+        <div style="font-size:3rem;">🪑</div>
+        <h2>Table Reserved!</h2>
+        <p id="confirm-detail"></p>
+        <p class="hint">A confirmation has been sent via Email, SMS and WhatsApp.</p>
+        <a href="index.html" class="btn btn-outline">Back to Home</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="site-footer"></footer>
+
+<script src="js/data.js"></script>
+<script src="js/store.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/location-picker.js"></script>
+<script src="js/reserve.js"></script>
+</body>
+</html>

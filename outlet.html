@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="page-title">Outlet — ABRA FOOD</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="outlet">
+
+<header id="site-header"></header>
+
+<main>
+  <div class="container" style="padding-top:28px;">
+    <div class="breadcrumb" id="breadcrumb"></div>
+
+    <div class="outlet-hero" id="outlet-hero">
+      <div>
+        <span class="badge badge-gold" id="outlet-brand-badge" style="margin-bottom:10px;"></span>
+        <h1 id="outlet-name" style="color:#fff;"></h1>
+        <div id="outlet-rating" style="color:rgba(255,255,255,.9);"></div>
+      </div>
+    </div>
+
+    <div class="info-grid">
+      <div>
+        <h2>Outlet Information</h2>
+        <div class="info-list">
+          <div class="row"><span class="ic">📍</span><div><strong>Address</strong><p id="outlet-address" style="margin:2px 0 0;"></p></div></div>
+          <div class="row"><span class="ic">📞</span><div><strong>Phone</strong><p id="outlet-phone" style="margin:2px 0 0;"></p></div></div>
+          <div class="row"><span class="ic">🕒</span><div><strong>Opening Hours</strong><p id="outlet-hours" style="margin:2px 0 0;"></p></div></div>
+          <div class="row"><span class="ic">🚗</span><div><strong>Parking</strong><p id="outlet-parking" style="margin:2px 0 0;"></p></div></div>
+        </div>
+
+        <h3 style="margin-top:32px;">Available Services</h3>
+        <div class="filter-bar" id="outlet-services"></div>
+
+        <h3>Facilities</h3>
+        <div class="filter-bar" id="outlet-facilities"></div>
+
+        <h3>Location</h3>
+        <div class="map-box" id="outlet-map">🗺️ Map preview</div>
+
+        <h3 style="margin-top:32px;">Menu Preview</h3>
+        <div class="grid grid-2" id="outlet-menu-preview" style="gap:14px;"></div>
+        <div class="text-center" style="margin-top:20px;"><a href="#" id="full-menu-link" class="btn btn-outline">View Full Menu</a></div>
+
+        <h3 style="margin-top:32px;">Guest Reviews</h3>
+        <div class="grid grid-2" id="outlet-reviews"></div>
+
+        <h3 style="margin-top:32px;">Current Offers</h3>
+        <div class="grid grid-2" id="outlet-offers"></div>
+      </div>
+
+      <div class="sticky-side">
+        <div class="card"><div class="card-body">
+          <h3>Quick Actions</h3>
+          <div style="display:flex;flex-direction:column;gap:10px;margin-top:12px;">
+            <a href="#" id="order-link" class="btn btn-primary btn-block">Order Online</a>
+            <a href="#" id="reserve-link" class="btn btn-outline btn-block">Reserve a Table</a>
+            <a href="events.html" class="btn btn-outline btn-block">Book an Event</a>
+          </div>
+        </div></div>
+        <div class="card"><div class="card-body">
+          <h3>At a Glance</h3>
+          <div class="info-list" style="gap:8px;">
+            <div class="row" style="padding:10px;"><span class="ic">🍽️</span><div>Dine-in, Delivery &amp; Pickup available</div></div>
+            <div class="row" style="padding:10px;"><span class="ic">⭐</span><div id="outlet-glance-rating"></div></div>
+          </div>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer id="site-footer"></footer>
+
+<script src="js/data.js"></script>
+<script src="js/store.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/outlet.js"></script>
+</body>
+</html>

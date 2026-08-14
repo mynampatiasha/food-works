@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Locations — ABRA FOOD</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="locations">
+
+<header id="site-header"></header>
+
+<main>
+  <section class="page-hero" style="padding-bottom:36px;">
+    <div class="container">
+      <span class="eyebrow">Global Locations</span>
+      <h1>Country → State → City → Outlet</h1>
+      <p>ABRA FOOD outlets across India, the UAE and the UK — with more countries joining every quarter.</p>
+    </div>
+  </section>
+
+  <div class="container" style="margin-top:-20px;">
+    <div class="finder reveal" style="margin-top:0;">
+      <div class="finder-row">
+        <div class="field"><label>Country</label><select id="f-country"><option value="">Select Country</option></select></div>
+        <div class="field"><label>State / Region</label><select id="f-state" disabled><option value="">Select State</option></select></div>
+        <div class="field"><label>City</label><select id="f-city" disabled><option value="">Select City</option></select></div>
+        <div class="field"><label>Brand</label>
+          <select id="f-brand">
+            <option value="">All Brands</option>
+            <option value="veg">ABRA VEG</option>
+            <option value="nonveg">ABRA NON-VEG</option>
+            <option value="cafe">ABRA CAFÉ</option>
+          </select>
+        </div>
+        <button class="btn btn-primary" id="f-clear">Reset</button>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="container">
+      <div class="breadcrumb" id="loc-breadcrumb"></div>
+      <p class="hint" id="result-count" style="margin-bottom:18px;"></p>
+      <div class="grid grid-3" id="outlet-grid"></div>
+    </div>
+  </section>
+</main>
+
+<footer id="site-footer"></footer>
+
+<script src="js/data.js"></script>
+<script src="js/store.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/location-picker.js"></script>
+<script src="js/locations.js"></script>
+</body>
+</html>

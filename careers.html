@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Careers — ABRA FOOD</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="careers">
+
+<header id="site-header"></header>
+
+<main>
+  <section class="page-hero" style="padding-bottom:36px;">
+    <div class="container">
+      <span class="eyebrow">Careers at ABRA</span>
+      <h1>Build Your Career With ABRA FOOD</h1>
+      <p>From kitchens to head office — join a growing global hospitality platform.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-head reveal"><h2>Departments</h2></div>
+      <div class="filter-bar text-center" style="justify-content:center;" id="dept-filter">
+        <button class="chip active" data-dept="all">All Departments</button>
+        <button class="chip" data-dept="Restaurant Operations">Restaurant Operations</button>
+        <button class="chip" data-dept="Kitchen">Kitchen</button>
+        <button class="chip" data-dept="Café Operations">Café Operations</button>
+        <button class="chip" data-dept="Technology">Technology</button>
+        <button class="chip" data-dept="Marketing">Marketing</button>
+        <button class="chip" data-dept="Logistics">Logistics</button>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--paper-dim);">
+    <div class="container">
+      <div class="section-head reveal"><h2>Open Positions</h2></div>
+      <div id="job-list" style="display:flex;flex-direction:column;gap:14px;max-width:820px;margin:0 auto;"></div>
+    </div>
+  </section>
+</main>
+
+<footer id="site-footer"></footer>
+
+<!-- Apply Modal -->
+<div class="modal-backdrop" id="apply-modal">
+  <div class="modal">
+    <button class="close-x" id="apply-close">&times;</button>
+    <h2 id="apply-title">Apply</h2>
+    <div class="alert alert-error" id="apply-error"></div>
+    <div class="form-group"><label>Full Name</label><input type="text" id="ap-name"></div>
+    <div class="form-group"><label>Email</label><input type="email" id="ap-email"></div>
+    <div class="form-group"><label>Phone</label><input type="tel" id="ap-phone"></div>
+    <div class="form-group"><label>Resume Link (Google Drive / LinkedIn)</label><input type="text" id="ap-resume" placeholder="https://..."></div>
+    <div class="form-group"><label>Why should we hire you?</label><textarea id="ap-note"></textarea></div>
+    <button class="btn btn-primary btn-block" id="apply-submit">Submit Application</button>
+  </div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/store.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/careers.js"></script>
+</body>
+</html>

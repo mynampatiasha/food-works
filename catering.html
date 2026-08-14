@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ABRA Catering — ABRA FOOD</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="catering">
+
+<header id="site-header"></header>
+
+<main>
+  <section class="page-hero" style="padding-bottom:36px;">
+    <div class="container">
+      <span class="eyebrow">ABRA Catering</span>
+      <h1>Catering for Every Occasion</h1>
+      <p>From intimate family functions to large-scale industrial catering — ABRA delivers, sets up and serves.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-head reveal"><h2>Our Catering Services</h2></div>
+      <div class="grid grid-4">
+        <div class="card reveal"><div class="card-body"><h3 style="font-size:1.05rem;">Corporate Catering</h3><p>Daily meals, office parties & business events.</p></div></div>
+        <div class="card reveal"><div class="card-body"><h3 style="font-size:1.05rem;">Wedding Catering</h3><p>Multi-cuisine wedding menus for any guest count.</p></div></div>
+        <div class="card reveal"><div class="card-body"><h3 style="font-size:1.05rem;">Birthday Catering</h3><p>Fun, flexible menus for birthday celebrations.</p></div></div>
+        <div class="card reveal"><div class="card-body"><h3 style="font-size:1.05rem;">School / College Catering</h3><p>Nutritious, budget-friendly bulk catering.</p></div></div>
+        <div class="card reveal"><div class="card-body"><h3 style="font-size:1.05rem;">Industrial Catering</h3><p>Daily meal programs for factories & industrial units.</p></div></div>
+        <div class="card reveal"><div class="card-body"><h3 style="font-size:1.05rem;">Institutional Catering</h3><p>Hospitals, hostels & long-term care facilities.</p></div></div>
+        <div class="card reveal"><div class="card-body"><h3 style="font-size:1.05rem;">Outdoor Catering</h3><p>Full-service catering at any outdoor venue.</p></div></div>
+        <div class="card reveal"><div class="card-body"><h3 style="font-size:1.05rem;">Event Catering</h3><p>Large-scale catering for festivals & public events.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--paper-dim);">
+    <div class="container center-col">
+      <div id="catering-form-wrap">
+        <div class="form-card">
+          <div class="alert alert-error" id="c-error"></div>
+          <h2>Request a Quote</h2>
+          <div class="form-grid" style="margin-top:16px;">
+            <div class="form-group field-full"><label>Event Location</label><input type="text" id="c-location" placeholder="Venue / area / city"></div>
+            <div class="form-group"><label>Event Date</label><input type="date" id="c-date"></div>
+            <div class="form-group"><label>Number of Guests</label><input type="number" id="c-guests" min="1" value="50"></div>
+            <div class="form-group">
+              <label>Food Preference</label>
+              <select id="c-pref"><option>Pure Vegetarian</option><option>Non-Vegetarian</option><option>Mixed (Veg + Non-Veg)</option><option>Jain</option></select>
+            </div>
+            <div class="form-group">
+              <label>Budget (per guest)</label>
+              <select id="c-budget"><option>Under ₹300</option><option>₹300 – ₹500</option><option>₹500 – ₹800</option><option>Above ₹800</option></select>
+            </div>
+            <div class="form-group"><label>Your Name</label><input type="text" id="c-name" placeholder="Full name"></div>
+            <div class="form-group"><label>Phone</label><input type="tel" id="c-phone" placeholder="+91 98765 43210"></div>
+            <div class="form-group field-full"><label>Menu Requirements</label><textarea id="c-req" placeholder="Cuisine preferences, live counters, service style, dietary restrictions..."></textarea></div>
+          </div>
+          <button class="btn btn-primary btn-block" id="c-submit" style="margin-top:10px;">Request Quote</button>
+        </div>
+      </div>
+
+      <div class="form-card text-center" id="catering-confirmed" style="display:none;">
+        <div style="font-size:3rem;">🍱</div>
+        <h2>Quote Request Received!</h2>
+        <p id="c-confirm-detail"></p>
+        <p class="hint">Our catering team will reach out within 24 hours with a customised quote.</p>
+        <a href="index.html" class="btn btn-outline">Back to Home</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="site-footer"></footer>
+
+<script src="js/data.js"></script>
+<script src="js/store.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/catering.js"></script>
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ABRA FOOD — One Brand. Every Taste. Every Table. Everywhere.</title>
+<meta name="description" content="ABRA FOOD is a global hospitality platform — ABRA VEG, ABRA NON-VEG and ABRA CAFÉ under one roof. Order online, reserve a table, or find your nearest outlet.">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="home">
+
+<header id="site-header"></header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero" style="padding-bottom:130px;">
+    <div class="hero-bg hero-bg-1"></div>
+    <div class="hero-bg hero-bg-2"></div>
+    <div class="hero-bg hero-bg-3"></div>
+    <div class="hero-bg hero-bg-4"></div>
+    <div class="hero-bg hero-bg-5"></div>
+    <div class="hero-bg hero-bg-6"></div>
+    <div class="hero-bg hero-bg-7"></div>
+    <div class="hero-bg hero-bg-8"></div>
+    <div class="hero-overlay"></div>
+    <div class="container">
+      <div class="hero-inner">
+        <span class="eyebrow">Global Hospitality Platform</span>
+        <h1>A World of Taste,<br><span>Under One Roof.</span></h1>
+        <p class="tagline">ABRA FOOD brings together pure vegetarian dining, authentic non-vegetarian cuisine and café culture — one brand, every table, everywhere.</p>
+        <div class="tag-strip">
+          <span>Veg</span><span>Non-Veg</span><span>Café</span><span>Hotels</span><span>Catering</span>
+        </div>
+        <div class="btn-row">
+          <a href="order.html" class="btn btn-gold">Order Now →</a>
+          <a href="veg.html" class="btn btn-ghost">🥗 Explore ABRA VEG</a>
+          <a href="non-veg.html" class="btn btn-ghost">🍗 Explore ABRA NON-VEG</a>
+          <a href="cafe.html" class="btn btn-ghost">☕ Explore ABRA CAFÉ</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATION FINDER -->
+  <div class="container">
+    <div class="finder reveal">
+      <h3>Find Your Nearest ABRA</h3>
+      <p class="sub">Select a country, state and city to discover ABRA VEG, NON-VEG &amp; CAFÉ outlets near you.</p>
+      <div class="finder-row">
+        <div class="field">
+          <label>Country</label>
+          <select id="f-country"><option value="">Select Country</option></select>
+        </div>
+        <div class="field">
+          <label>State / Region</label>
+          <select id="f-state" disabled><option value="">Select State</option></select>
+        </div>
+        <div class="field">
+          <label>City</label>
+          <select id="f-city" disabled><option value="">Select City</option></select>
+        </div>
+        <div class="field">
+          <label>Outlet</label>
+          <select id="f-outlet" disabled><option value="">Select Outlet</option></select>
+        </div>
+        <button class="btn btn-primary" id="f-go">Go</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- OUR BRANDS -->
+  <section id="brands">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Our Brands</span>
+        <h2>Three Experiences. One ABRA.</h2>
+        <p>Whatever the craving, there's an ABRA for it — pick a brand to explore its menu and nearest outlet.</p>
+      </div>
+      <div class="grid grid-3">
+        <div class="brand-block brand-veg reveal">
+          <div class="icon">🥗</div>
+          <h3>ABRA VEG</h3>
+          <p class="desc">Pure Vegetarian Dining — South Indian • North Indian • Continental • Chinese • Jain • Healthy Food</p>
+          <div class="btn-row">
+            <a href="veg.html" class="btn btn-ghost btn-sm">Explore Menu</a>
+            <a href="order.html?brand=veg" class="btn btn-gold btn-sm">Order Now</a>
+          </div>
+        </div>
+        <div class="brand-block brand-nonveg reveal">
+          <div class="icon">🍗</div>
+          <h3>ABRA NON-VEG</h3>
+          <p class="desc">Authentic Non-Vegetarian Cuisine — Chicken • Mutton • Seafood • Biryani • Tandoori • Kebabs • Grill</p>
+          <div class="btn-row">
+            <a href="non-veg.html" class="btn btn-ghost btn-sm">Explore Menu</a>
+            <a href="order.html?brand=nonveg" class="btn btn-gold btn-sm">Order Now</a>
+          </div>
+        </div>
+        <div class="brand-block brand-cafe reveal">
+          <div class="icon">☕</div>
+          <h3>ABRA CAFÉ</h3>
+          <p class="desc">Coffee • Bakery • Snacks • Desserts — Coffee • Tea • Bakery • Sandwiches • Pizza • Desserts</p>
+          <div class="btn-row">
+            <a href="cafe.html" class="btn btn-ghost btn-sm">Explore Café</a>
+            <a href="order.html?brand=cafe" class="btn btn-gold btn-sm">Order Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section style="padding-top:0;">
+    <div class="container">
+      <div class="stats-strip reveal">
+        <div><div class="num" id="stat-outlets">0</div><div class="lbl">Outlets</div></div>
+        <div><div class="num" id="stat-cities">0</div><div class="lbl">Cities</div></div>
+        <div><div class="num" id="stat-countries">0</div><div class="lbl">Countries</div></div>
+        <div><div class="num">4.6★</div><div class="lbl">Average Rating</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section>
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">How It Works</span>
+        <h2>Order in Four Simple Steps</h2>
+        <p>No app download needed — order straight from the website, on any device.</p>
+      </div>
+      <div class="grid grid-4">
+        <div class="card reveal"><div class="card-body">
+          <div class="dot dot-veg" style="margin-bottom:10px;"></div>
+          <h3>1. Pick a Location</h3><p>Choose your country, city and nearest ABRA outlet.</p>
+        </div></div>
+        <div class="card reveal"><div class="card-body">
+          <h3>2. Choose a Brand</h3><p>ABRA VEG, NON-VEG or CAFÉ — browse the outlet's live menu.</p>
+        </div></div>
+        <div class="card reveal"><div class="card-body">
+          <h3>3. Delivery or Pickup</h3><p>Add items to cart and choose how you'd like to receive your order.</p>
+        </div></div>
+        <div class="card reveal"><div class="card-body">
+          <h3>4. Track Your Order</h3><p>Pay online or on delivery, then track your order in real time.</p>
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFFERS PREVIEW -->
+  <section style="background:var(--paper-dim);">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Offers</span>
+        <h2>Deals Near You</h2>
+        <p>Offers are outlet-specific — see what's live at your nearest ABRA.</p>
+      </div>
+      <div class="grid grid-3" id="offers-preview"></div>
+      <div class="text-center" style="margin-top:28px;"><a href="offers.html" class="btn btn-outline">View All Offers</a></div>
+    </div>
+  </section>
+
+  <!-- POPULAR DISHES -->
+  <section>
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Fan Favourites</span>
+        <h2>Popular Across ABRA</h2>
+        <p>The dishes our guests order again and again.</p>
+      </div>
+      <div class="grid grid-4" id="popular-dishes"></div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section style="background:var(--paper-dim);">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Reviews</span>
+        <h2>What Our Guests Say</h2>
+      </div>
+      <div class="grid grid-4" id="testimonials"></div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section>
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Gallery</span>
+        <h2>Food, Restaurants &amp; Café</h2>
+      </div>
+      <div class="gallery-grid reveal">
+        <div class="gallery-tile media-veg">🥗</div>
+        <div class="gallery-tile media-nonveg">🍗</div>
+        <div class="gallery-tile media-cafe">☕</div>
+        <div class="gallery-tile media-gold">🎉</div>
+        <div class="gallery-tile media-ink">👨‍🍳</div>
+        <div class="gallery-tile media-veg">🍛</div>
+        <div class="gallery-tile media-nonveg">🍢</div>
+        <div class="gallery-tile media-cafe">🧁</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section>
+    <div class="container">
+      <div class="cta-band reveal">
+        <span class="eyebrow">Join ABRA CLUB</span>
+        <h2>Earn Points on Every Visit.</h2>
+        <p>Dining, online orders, reservations, events, catering — every ABRA experience earns you rewards.</p>
+        <div class="btn-row" style="justify-content:center;">
+          <a href="admin.html" class="btn btn-gold">Join ABRA CLUB</a>
+          <a href="franchise-coming-soon.html" class="btn btn-ghost" onclick="return false;" style="opacity:.6;cursor:not-allowed;" title="Coming soon">Franchise With ABRA — Coming Soon</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="site-footer"></footer>
+
+<script src="js/data.js"></script>
+<script src="js/store.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/location-picker.js"></script>
+<script src="js/home.js"></script>
+</body>
+</html>

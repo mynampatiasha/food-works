@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Events &amp; Party Booking — ABRA FOOD</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="events">
+
+<header id="site-header"></header>
+
+<main>
+  <section class="page-hero" style="padding-bottom:36px;">
+    <div class="container">
+      <span class="eyebrow">Events &amp; Party Booking</span>
+      <h1>Celebrate With ABRA</h1>
+      <p>Birthdays, weddings, corporate events &amp; private dining — hosted at your nearest ABRA outlet.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-head reveal"><h2>Occasions We Host</h2></div>
+      <div class="filter-bar text-center" style="justify-content:center;">
+        <span class="chip active">🎂 Birthday</span>
+        <span class="chip">💍 Wedding</span>
+        <span class="chip">💐 Engagement</span>
+        <span class="chip">🎊 Anniversary</span>
+        <span class="chip">💼 Corporate Event</span>
+        <span class="chip">🤝 Business Meeting</span>
+        <span class="chip">👨‍👩‍👧 Family Function</span>
+        <span class="chip">🥂 Private Dining</span>
+        <span class="chip">🎉 Festival Events</span>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--paper-dim);">
+    <div class="container center-col">
+      <div id="event-form-wrap">
+        <div class="form-card">
+          <div class="alert alert-error" id="e-error"></div>
+          <h2>Plan Your Event</h2>
+          <div class="form-grid" style="margin-top:16px;">
+            <div class="form-group field-full"><label>Country</label><select id="e-country"><option value="">Select Country</option></select></div>
+            <div class="form-group"><label>State</label><select id="e-state" disabled><option value="">Select State</option></select></div>
+            <div class="form-group"><label>City</label><select id="e-city" disabled><option value="">Select City</option></select></div>
+            <div class="form-group field-full"><label>Outlet</label><select id="e-outlet" disabled><option value="">Select Outlet</option></select></div>
+
+            <div class="form-group"><label>Event Date</label><input type="date" id="e-date"></div>
+            <div class="form-group"><label>Number of Guests</label><input type="number" id="e-guests" min="1" value="20"></div>
+
+            <div class="form-group field-full">
+              <label>Event Type</label>
+              <select id="e-type">
+                <option>Birthday</option><option>Wedding</option><option>Engagement</option><option>Anniversary</option>
+                <option>Corporate Event</option><option>Business Meeting</option><option>Family Function</option>
+                <option>Private Dining</option><option>Festival Event</option>
+              </select>
+            </div>
+
+            <div class="form-group field-full">
+              <label>Package</label>
+              <div class="grid grid-3" id="e-packages" style="margin-top:6px;"></div>
+            </div>
+
+            <div class="form-group"><label>Your Name</label><input type="text" id="e-name" placeholder="Full name"></div>
+            <div class="form-group"><label>Phone</label><input type="tel" id="e-phone" placeholder="+91 98765 43210"></div>
+            <div class="form-group field-full"><label>Requirements</label><textarea id="e-req" placeholder="Decoration, cake, music, seating layout, dietary needs..."></textarea></div>
+          </div>
+          <button class="btn btn-primary btn-block" id="e-submit" style="margin-top:10px;">Get a Quote</button>
+        </div>
+      </div>
+
+      <div class="form-card text-center" id="event-confirmed" style="display:none;">
+        <div style="font-size:3rem;">🎉</div>
+        <h2>Quote Requested!</h2>
+        <p id="e-confirm-detail"></p>
+        <p class="hint">Our events team will contact you within 24 hours with a detailed quote.</p>
+        <a href="index.html" class="btn btn-outline">Back to Home</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="site-footer"></footer>
+
+<script src="js/data.js"></script>
+<script src="js/store.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/location-picker.js"></script>
+<script src="js/events.js"></script>
+</body>
+</html>

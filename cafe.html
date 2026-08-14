@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ABRA CAFÉ — Coffee, Bakery &amp; Desserts | ABRA FOOD</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="css/style.css">
+<style>.page-hero{background:linear-gradient(135deg,#3a2412,#8a5a34);}</style>
+</head>
+<body data-page="cafe" data-brand="cafe">
+
+<header id="site-header"></header>
+
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow" id="brand-eyebrow" style="color:#f4e2c9;">Coffee • Bakery • Snacks • Desserts</span>
+      <h1 id="brand-title">ABRA CAFÉ</h1>
+      <p id="brand-desc"></p>
+      <div class="btn-row" style="justify-content:center;margin-top:22px;">
+        <a href="menu.html?brand=cafe" class="btn btn-gold">Explore Café</a>
+        <a href="order.html?brand=cafe" class="btn btn-ghost">Order Now</a>
+        <a href="#find-outlet" class="btn btn-ghost">Find Café</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">On the Menu</span>
+        <h2>Coffee, Tea, Bakery &amp; Desserts</h2>
+      </div>
+      <div class="filter-bar text-center" style="justify-content:center;" id="brand-cuisines"></div>
+    </div>
+  </section>
+
+  <section style="background:var(--paper-dim);">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Menu Categories</span>
+        <h2>Browse by Category</h2>
+      </div>
+      <div class="pill-nav text-center" style="justify-content:center;" id="brand-categories"></div>
+      <div class="grid grid-3" id="brand-dishes"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Offers</span>
+        <h2>ABRA CAFÉ Offers</h2>
+      </div>
+      <div class="grid grid-3" id="brand-offers"></div>
+    </div>
+  </section>
+
+  <section style="background:var(--paper-dim);">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Meet Our Chefs</span>
+        <h2>The Hands Behind the Flavour</h2>
+      </div>
+      <div class="grid grid-4" id="brand-chefs"></div>
+    </div>
+  </section>
+
+  <section id="find-outlet">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Find a Café</span>
+        <h2>ABRA CAFÉ Near You</h2>
+      </div>
+      <div class="finder reveal" style="margin-top:0;">
+        <div class="finder-row">
+          <div class="field"><label>Country</label><select id="b-country"><option value="">Select Country</option></select></div>
+          <div class="field"><label>State</label><select id="b-state" disabled><option value="">Select State</option></select></div>
+          <div class="field"><label>City</label><select id="b-city" disabled><option value="">Select City</option></select></div>
+          <div class="field"><label>Outlet</label><select id="b-outlet" disabled><option value="">Select Outlet</option></select></div>
+          <button class="btn btn-cafe" id="b-go">Go</button>
+        </div>
+      </div>
+      <div class="grid grid-3" id="brand-outlets" style="margin-top:36px;"></div>
+    </div>
+  </section>
+</main>
+
+<footer id="site-footer"></footer>
+
+<script src="js/data.js"></script>
+<script src="js/store.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/location-picker.js"></script>
+<script src="js/brand.js"></script>
+</body>
+</html>

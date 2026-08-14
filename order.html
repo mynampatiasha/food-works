@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order Online — ABRA FOOD</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="order">
+
+<header id="site-header"></header>
+
+<main>
+  <section class="page-hero" style="padding-bottom:36px;">
+    <div class="container">
+      <span class="eyebrow">Order Online</span>
+      <h1>No App Needed — Order Right Here</h1>
+      <p>Pick a location, choose delivery or pickup, and order from ABRA VEG, NON-VEG or CAFÉ.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="steps" id="steps"></div>
+
+      <!-- STEP 1: LOCATION + BRAND -->
+      <div class="step-panel" id="panel-1">
+        <div class="form-card">
+          <h2>1. Choose Your Location &amp; Brand</h2>
+          <div class="finder-row" style="margin-top:20px;">
+            <div class="field"><label>Country</label><select id="o-country"><option value="">Select Country</option></select></div>
+            <div class="field"><label>State</label><select id="o-state" disabled><option value="">Select State</option></select></div>
+            <div class="field"><label>City</label><select id="o-city" disabled><option value="">Select City</option></select></div>
+          </div>
+          <div style="margin-top:24px;">
+            <label style="display:block;font-size:.82rem;font-weight:700;color:var(--ink-soft);margin-bottom:10px;">Brand</label>
+            <div class="filter-bar" id="o-brand-chips">
+              <button class="chip veg-chip" data-brand="veg">🥗 ABRA VEG</button>
+              <button class="chip nonveg-chip" data-brand="nonveg">🍗 ABRA NON-VEG</button>
+              <button class="chip cafe-chip" data-brand="cafe">☕ ABRA CAFÉ</button>
+            </div>
+          </div>
+          <div style="margin-top:10px;">
+            <label style="display:block;font-size:.82rem;font-weight:700;color:var(--ink-soft);margin-bottom:10px;">Outlet</label>
+            <div class="grid grid-3" id="o-outlet-list"></div>
+          </div>
+          <div class="btn-row" style="margin-top:24px;justify-content:flex-end;">
+            <button class="btn btn-primary" id="to-step-2" disabled>Continue →</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 2: DELIVERY / PICKUP -->
+      <div class="step-panel" id="panel-2" style="display:none;">
+        <div class="form-card">
+          <h2>2. Delivery or Pickup?</h2>
+          <div class="grid grid-2" style="margin-top:20px;">
+            <div class="card" id="mode-delivery" style="cursor:pointer;padding:22px;">
+              <div class="card-body" style="padding:0;">
+                <div style="font-size:2rem;">🛵</div>
+                <h3>Delivery</h3>
+                <p>We'll deliver to your address. Free above ₹499.</p>
+              </div>
+            </div>
+            <div class="card" id="mode-pickup" style="cursor:pointer;padding:22px;">
+              <div class="card-body" style="padding:0;">
+                <div style="font-size:2rem;">🏃</div>
+                <h3>Self Pickup</h3>
+                <p>Skip the wait — order ahead and pick it up at the outlet.</p>
+              </div>
+            </div>
+          </div>
+          <div class="btn-row" style="margin-top:24px;justify-content:space-between;">
+            <button class="btn btn-outline" data-back="1">← Back</button>
+            <button class="btn btn-primary" id="to-step-3" disabled>Continue →</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 3: MENU -->
+      <div class="step-panel" id="panel-3" style="display:none;">
+        <div class="form-card">
+          <h2>3. Build Your Order</h2>
+          <p class="hint" id="ordering-from"></p>
+          <div class="filter-bar" style="margin-top:14px;">
+            <div class="search-box"><span class="ic">🔍</span><input type="text" id="o-search" placeholder="Search this menu..."></div>
+          </div>
+          <div class="pill-nav" id="o-category-pills"></div>
+          <div id="o-menu-results"></div>
+          <div class="btn-row" style="margin-top:24px;justify-content:space-between;">
+            <button class="btn btn-outline" data-back="2">← Back</button>
+            <button class="btn btn-primary" id="to-step-4">Review Order →</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 4: ADDRESS + PAYMENT -->
+      <div class="step-panel" id="panel-4" style="display:none;">
+        <div class="two-col" style="align-items:start;">
+          <div class="form-card">
+            <h2 id="checkout-heading">4. Checkout</h2>
+            <div id="address-block">
+              <div class="form-grid" style="margin-top:16px;">
+                <div class="form-group field-full"><label>Full Name</label><input type="text" id="addr-name" placeholder="Your name"></div>
+                <div class="form-group"><label>Phone</label><input type="tel" id="addr-phone" placeholder="+91 98765 43210"></div>
+                <div class="form-group"><label>Pincode</label><input type="text" id="addr-pincode" placeholder="560066"></div>
+                <div class="form-group field-full"><label>Delivery Address</label><textarea id="addr-line" placeholder="House / Flat No., Street, Landmark"></textarea></div>
+              </div>
+            </div>
+            <h3 style="margin-top:10px;">Payment Method</h3>
+            <div class="grid grid-2">
+              <label class="card" style="padding:16px;display:flex;gap:10px;align-items:center;cursor:pointer;">
+                <input type="radio" name="pay" value="cod" checked> Cash / Card on Delivery
+              </label>
+              <label class="card" style="padding:16px;display:flex;gap:10px;align-items:center;cursor:pointer;">
+                <input type="radio" name="pay" value="online"> Pay Online (UPI / Card)
+              </label>
+            </div>
+            <div class="btn-row" style="margin-top:24px;justify-content:space-between;">
+              <button class="btn btn-outline" data-back="3">← Back</button>
+              <button class="btn btn-primary" id="place-order">Place Order</button>
+            </div>
+          </div>
+          <div class="form-card">
+            <h3>Order Summary</h3>
+            <div id="order-summary"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 5: CONFIRMATION -->
+      <div class="step-panel" id="panel-5" style="display:none;">
+        <div class="form-card text-center" style="max-width:600px;margin:0 auto;">
+          <div style="font-size:3rem;">✅</div>
+          <h2>Order Confirmed!</h2>
+          <p id="confirm-text"></p>
+          <div class="steps" id="track-steps" style="justify-content:center;margin:28px 0;"></div>
+          <a href="menu.html" class="btn btn-outline">Order Something Else</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="site-footer"></footer>
+
+<script src="js/data.js"></script>
+<script src="js/store.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/location-picker.js"></script>
+<script src="js/order.js"></script>
+</body>
+</html>

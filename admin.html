@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin CMS — ABRA FOOD</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="admin">
+
+<header id="site-header"></header>
+
+<main>
+  <div class="admin-shell">
+    <aside class="admin-side">
+      <div class="brand-logo" style="color:#fff;font-size:1.1rem;margin-bottom:6px;"><span class="mark">A</span> Admin CMS</div>
+      <p style="font-size:.78rem;color:rgba(255,255,255,.5);margin-bottom:10px;">Phase 1 demo — changes save to this browser only.</p>
+      <h4>Overview</h4>
+      <button class="side-link active" data-view="overview">📊 Dashboard</button>
+      <h4>Manage</h4>
+      <button class="side-link" data-view="outlets">🏪 Outlets</button>
+      <button class="side-link" data-view="menu">🍽️ Menu Items</button>
+      <button class="side-link" data-view="offers">🎁 Offers</button>
+      <h4>System</h4>
+      <button class="side-link" id="reset-data">♻️ Reset Demo Data</button>
+    </aside>
+
+    <section class="admin-main">
+      <!-- OVERVIEW -->
+      <div class="admin-view" id="view-overview">
+        <h2>Central Business Dashboard</h2>
+        <p class="hint">This is where head office would see sales, orders and outlet performance once connected to a real backend / POS.</p>
+        <div class="kpi-row">
+          <div class="kpi"><div class="num" id="kpi-outlets">0</div><div class="lbl">Total Outlets</div></div>
+          <div class="kpi"><div class="num" id="kpi-menu">0</div><div class="lbl">Menu Items</div></div>
+          <div class="kpi"><div class="num" id="kpi-offers">0</div><div class="lbl">Active Offers</div></div>
+          <div class="kpi"><div class="num" id="kpi-countries">0</div><div class="lbl">Countries Live</div></div>
+        </div>
+        <div class="admin-card">
+          <h3>Outlets by Brand</h3>
+          <div id="brand-breakdown" style="display:flex;gap:20px;flex-wrap:wrap;margin-top:12px;"></div>
+        </div>
+        <div class="admin-card">
+          <h3>Architecture Note</h3>
+          <p class="hint">Country → State → City → Outlet → Brand → Menu Category → Menu Item. Every page on this site reads through <code>js/data.js</code>, and this admin panel writes overrides to <code>localStorage</code> (<code>js/store.js</code>). In Phase 3 these same function names would call a real API instead — no page templates need to change.</p>
+        </div>
+      </div>
+
+      <!-- OUTLETS -->
+      <div class="admin-view" id="view-outlets" style="display:none;">
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <h2>Outlets</h2>
+          <button class="btn btn-primary btn-sm" id="add-outlet">+ Add Outlet</button>
+        </div>
+        <div class="admin-card">
+          <table class="data-table">
+            <thead><tr><th>Name</th><th>Brand</th><th>City</th><th>Rating</th><th>Services</th><th></th></tr></thead>
+            <tbody id="outlets-table"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- MENU -->
+      <div class="admin-view" id="view-menu" style="display:none;">
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <h2>Menu Items</h2>
+          <button class="btn btn-primary btn-sm" id="add-menu">+ Add Menu Item</button>
+        </div>
+        <div class="admin-card">
+          <table class="data-table">
+            <thead><tr><th>Name</th><th>Brand</th><th>Category</th><th>Price</th><th>Veg</th><th>Outlets</th><th></th></tr></thead>
+            <tbody id="menu-table"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- OFFERS -->
+      <div class="admin-view" id="view-offers" style="display:none;">
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <h2>Offers</h2>
+          <button class="btn btn-primary btn-sm" id="add-offer">+ Add Offer</button>
+        </div>
+        <div class="admin-card">
+          <table class="data-table">
+            <thead><tr><th>Title</th><th>Brand</th><th>Outlet</th><th>Valid Till</th><th></th></tr></thead>
+            <tbody id="offers-table"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<!-- OUTLET MODAL -->
+<div class="modal-backdrop" id="modal-outlet">
+  <div class="modal">
+    <button class="close-x" data-close-modal>&times;</button>
+    <h2 id="outlet-modal-title">Add Outlet</h2>
+    <input type="hidden" id="mo-original-slug">
+    <div class="form-group"><label>Outlet Name</label><input type="text" id="mo-name" placeholder="ABRA VEG — Electronic City"></div>
+    <div class="form-group"><label>Brand</label>
+      <select id="mo-brand"><option value="veg">ABRA VEG</option><option value="nonveg">ABRA NON-VEG</option><option value="cafe">ABRA CAFÉ</option></select>
+    </div>
+    <div class="form-group"><label>Country</label><select id="mo-country"></select></div>
+    <div class="form-group"><label>State</label><select id="mo-state"></select></div>
+    <div class="form-group"><label>City</label><select id="mo-city"></select></div>
+    <div class="form-group"><label>Area</label><input type="text" id="mo-area" placeholder="Electronic City"></div>
+    <div class="form-group"><label>Address</label><input type="text" id="mo-address"></div>
+    <div class="form-group"><label>Phone</label><input type="text" id="mo-phone"></div>
+    <div class="form-group"><label>Opening Hours</label><input type="text" id="mo-hours" placeholder="11:00 AM – 11:00 PM"></div>
+    <div class="form-group"><label>Rating</label><input type="number" id="mo-rating" step="0.1" min="1" max="5" value="4.5"></div>
+    <div class="form-group"><label>Services (comma separated)</label><input type="text" id="mo-services" placeholder="Dine-in, Delivery, Pickup"></div>
+    <div class="form-group"><label>Facilities (comma separated)</label><input type="text" id="mo-facilities" placeholder="AC Seating, Parking"></div>
+    <div class="form-group"><label>Parking</label><input type="text" id="mo-parking"></div>
+    <button class="btn btn-primary btn-block" id="mo-save">Save Outlet</button>
+  </div>
+</div>
+
+<!-- MENU MODAL -->
+<div class="modal-backdrop" id="modal-menu">
+  <div class="modal">
+    <button class="close-x" data-close-modal>&times;</button>
+    <h2 id="menu-modal-title">Add Menu Item</h2>
+    <input type="hidden" id="mm-original-id">
+    <div class="form-group"><label>Brand</label><select id="mm-brand"><option value="veg">ABRA VEG</option><option value="nonveg">ABRA NON-VEG</option><option value="cafe">ABRA CAFÉ</option></select></div>
+    <div class="form-group"><label>Category</label><select id="mm-category"></select></div>
+    <div class="form-group"><label>Name</label><input type="text" id="mm-name"></div>
+    <div class="form-group"><label>Description</label><textarea id="mm-desc"></textarea></div>
+    <div class="form-group"><label>Price (₹)</label><input type="number" id="mm-price" min="0"></div>
+    <div class="form-group"><label><input type="checkbox" id="mm-veg" checked> Vegetarian</label></div>
+    <div class="form-group"><label><input type="checkbox" id="mm-popular"> Mark as Popular</label></div>
+    <div class="form-group"><label>Available At</label><input type="text" id="mm-outlets" placeholder="'all' or comma separated outlet slugs"></div>
+    <button class="btn btn-primary btn-block" id="mm-save">Save Menu Item</button>
+  </div>
+</div>
+
+<!-- OFFER MODAL -->
+<div class="modal-backdrop" id="modal-offer">
+  <div class="modal">
+    <button class="close-x" data-close-modal>&times;</button>
+    <h2 id="offer-modal-title">Add Offer</h2>
+    <input type="hidden" id="mf-original-id">
+    <div class="form-group"><label>Title</label><input type="text" id="mf-title"></div>
+    <div class="form-group"><label>Description</label><textarea id="mf-desc"></textarea></div>
+    <div class="form-group"><label>Tag</label><input type="text" id="mf-tag" placeholder="Weekend Special"></div>
+    <div class="form-group"><label>Brand</label><select id="mf-brand"><option value="all">All Brands</option><option value="veg">ABRA VEG</option><option value="nonveg">ABRA NON-VEG</option><option value="cafe">ABRA CAFÉ</option></select></div>
+    <div class="form-group"><label>Outlet</label><select id="mf-outlet"><option value="all">All Outlets</option></select></div>
+    <div class="form-group"><label>Valid Till</label><input type="date" id="mf-validtill"></div>
+    <button class="btn btn-primary btn-block" id="mf-save">Save Offer</button>
+  </div>
+</div>
+
+<footer id="site-footer"></footer>
+
+<script src="js/data.js"></script>
+<script src="js/store.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>
